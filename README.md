@@ -2,10 +2,10 @@
 
 I explore my mixed-volume oracle framework through numerical experiments with a centered cube and a Euclidean ball. I implement B1, B2, B3, and Algorithms 1–3 in Python and C++. I compare estimates with exact cube formulas and study measured runtime as lambda and dimension change.
 
-\[
+```math
 P=[-1,1]^n,\quad B=B_2^n,\quad
 \operatorname{Vol}(P+\lambda B)=\sum_{i=0}^{n}\binom{n}{i}M_i\lambda^i.
-\]
+```
 
 I use a side-length-2 cube, not a side-length-1 cube. My lambda is any nonnegative real number. My component index is codimension: in dimension 3, labels 0–3 correspond to cube interior, face, edge, and vertex projection regions.
 
