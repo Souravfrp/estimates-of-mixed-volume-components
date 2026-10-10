@@ -1,6 +1,6 @@
 # Mixed Volume Approximations
 
-I explore my mixed-volume oracle framework through numerical experiments with a centered cube and a Euclidean ball. I implement B1, B2, B3, and Algorithms 1–3 in Python and C++. I compare estimates with exact cube formulas and study measured runtime as lambda and dimension change.
+I explore the framework from my master's thesis, [*Approximation of Mixed Volumes of Special Convex Bodies*](https://github.com/Souravfrp/Souravfrp.github.io/blob/main/Mixed_volume_thesis_pdf.pdf) (TIFR, March 2026, Chapters 4–6), through numerical experiments with a centered cube and a Euclidean ball. B1, B2, B3 and Algorithms 1–3 are the labels used in that thesis, not unexplained names for external software. I implement numerical versions in Python and C++. I compare estimates with exact cube formulas and study measured runtime as lambda and dimension change.
 
 ```math
 P=[-1,1]^n,\quad B=B_2^n,\quad
@@ -8,6 +8,18 @@ P=[-1,1]^n,\quad B=B_2^n,\quad
 ```
 
 I use a side-length-2 cube, not a side-length-1 cube. My lambda is any nonnegative real number. My component index is codimension: in dimension 3, labels 0–3 correspond to cube interior, face, edge, and vertex projection regions.
+
+## Where the oracle and algorithm labels come from
+
+Chapter 4 of my thesis defines the three interfaces:
+
+- **B1:** given a nonnegative scaling parameter lambda, approximate the volume of P + lambda B.
+- **B2:** given lambda, sample an index from 0 to n identifying the geometric component of a sampled point. The theoretical component probabilities refer to the stated sampling assumptions.
+- **B3:** given lambda, use repeated B2 samples to obtain an empirical component-probability vector.
+
+**Algorithm 1** describes the B2 sampling and component assignment. **Algorithm 2** uses B3 in a noisy search for a scaling parameter appropriate to a target component. **Algorithm 3** combines B1's volume estimate with a fresh B3 component probability to estimate the target mixed-volume coefficient.
+
+My B1 volume-estimation background also draws on Bollobas's *Volume Estimates and Rapid Mixing*, Lecture 4, and the Dyer–Frieze–Kannan volume-approximation work cited below. My thesis supplies the oracle/algorithm organization used here. I distinguish that thesis from the separate co-authored arXiv paper *Approximating Mixed Volumes to Arbitrary Accuracy*; I do not attribute these implementation labels to that paper.
 
 ## My theoretical framework and practical experiment
 
