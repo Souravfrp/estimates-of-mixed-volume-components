@@ -1,0 +1,6 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+results/mixed_volume_benchmark
+mixed_volume
+.DS_Store
